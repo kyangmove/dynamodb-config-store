@@ -33,7 +33,7 @@ prod        | secret-key     |                |                | test1234
 """
 import os.path
 import time
-from ConfigParser import SafeConfigParser
+from configparser import SafeConfigParser
 
 from boto.dynamodb2.exceptions import (
     LimitExceededException,
