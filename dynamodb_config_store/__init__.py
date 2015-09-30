@@ -33,7 +33,7 @@ prod        | secret-key     |                |                | test1234
 """
 import os.path
 import time
-from configparser import SafeConfigParser
+from configparser import ConfigParser
 
 from boto.dynamodb2.exceptions import (
     LimitExceededException,
@@ -53,7 +53,7 @@ from dynamodb_config_store.exceptions import (
     TableNotReadyException)
 
 # Publish the module __version__
-config_file = SafeConfigParser()
+config_file = ConfigParser()
 config_file.read(
     os.path.abspath(os.path.join(os.path.dirname(__file__), 'settings.conf')))
 __version__ = config_file.get('general', 'version')
